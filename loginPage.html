@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="">Login page</h1>
+    </div>
+    <div class="container">
+      <form>
+        Email Address : <br />
+
+        <input type="email" id="email" name="email" /><br />
+
+        Password:<br />
+        <input id="password" type="password" name="password" /><br /><br />
+
+        <input type="submit" name="submit" onclick="verify()" />
+
+        <button type="button" value="submit">
+          <a href="Registerpage.html">register</a>
+        </button>
+      </form>
+    </div>
+  </body>
+  <script>
+    function verify() {
+      let email = document.getElementById("email").value;
+      let pwd = document.getElementById("password").value;
+      let submitOK = "true";
+      let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (email.match(mailformat)) {
+        return;
+      } else {
+        alert("Enter a valid  Email Address");
+        submitOK = "false";
+      }
+      /*if (email == "user@gmail.com") {
+        if (pwd == 123456) {
+          alert("Login Successful");
+          // document.location.assign('https://developer.mozilla.org/en-US/docs/Web/API/Location.reload');
+          document.location.assign("https://www.google.com");
+        } else {
+          alert("Invalid Password");
+          submitOK = "false";
+          return;
+        }
+      } else {
+        alert("Invalid Email Address");
+        submitOK = "false";
+        return;
+      }*/
+      /*  if(submitOK=='true'){
+            alert('Login Successful')
+        }
+        window.location.href="http://www.google.com";*/
+    }
+  </script>
+</html>
